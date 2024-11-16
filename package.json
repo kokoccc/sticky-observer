@@ -1,0 +1,35 @@
+{
+  "name": "sticky-observer",
+  "version": "1.0.0",
+  "description": "JavaScript utility to observe sticky elements using the Intersection Observer API",
+  "main": "dist/sticky-observer.cjs.js",
+  "module": "dist/sticky-observer.esm.js",
+  "types": "dist/index.d.ts",
+  "unpkg": "dist/sticky-observer.umd.min.js",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kokoccc/sticky-observer.git"
+  },
+  "keywords": [
+    "intersection",
+    "observer",
+    "sticky"
+  ],
+  "author": "kokoccc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kokoccc/sticky-observer/issues"
+  },
+  "homepage": "https://github.com/kokoccc/sticky-observer#readme",
+  "devDependencies": {
+    "@rollup/plugin-terser": "0.4.4",
+    "@rollup/plugin-typescript": "12.1.1",
+    "@types/node": "22.9.0",
+    "rollup": "4.27.2",
+    "tslib": "2.8.1",
+    "typescript": "5.6.3"
+  }
+}
