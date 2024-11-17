@@ -1,5 +1,4 @@
 @import url('./normalize.css');
-
-body {
-  background-color: red;
-}
+@import url('./general.css');
+@import url('./content.css');
+@import url('./ribbons.css');

@@ -3,10 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sticky Observer Demo</title>
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-  Hello
+  <div class="container">
+    <div class="space"></div>
+    <div class="sticky top top-1">top-1</div>
+    <div class="space"></div>
+    <div class="sticky top top-2">top-2</div>
+    <div class="content"></div>
+    <div class="sticky bottom bottom-2">bottom-2</div>
+    <div class="space"></div>
+    <div class="sticky bottom bottom-1">bottom-1</div>
+    <div class="space"></div>
+  </div>
+
+  <div class="ribbon ribbon--left ribbon--grey">
+    <a href="https://github.com/kokoccc/sticky-observer" rel="noopener">See on GitHub</a>
+  </div>
+
+  <script src="https://unpkg.com/@kokoccc/sticky-observer/dist/sticky-observer.umd.min.js"></script>
+
+  <script>
+    (() => {
+      const size = 50
+
+      const elements = [
+        ['.top-1', { top: 0 }],
+        ['.top-2', { top: size }],
+        ['.bottom-1', { bottom: 0 }],
+        ['.bottom-2', { bottom: size }],
+      ]
+
+      const onIntersect = ({ isStuck }, [entry], observer) => {
+        const { target } = entry
+        target.classList.toggle('stuck', isStuck)
+      }
+
+      elements.forEach(([selector, offsets]) => {
+        const element = document.querySelector(selector)
+        const observer = new StickyObserver(onIntersect, offsets, document.body)
+
+        observer.observe(element)
+      })
+    })()
+  </script>
 </body>
 </html>

@@ -1,0 +1,53 @@
+:root {
+  --size: 50px;
+}
+
+.container {
+  height: 100%;
+  overflow: auto;
+}
+
+.space {
+  height: var(--size);
+}
+
+.sticky {
+  position: sticky;
+  display: grid;
+  place-items: center;
+  height: var(--size);
+  background-color: lightgray;
+}
+
+.content {
+  height: 200dvh;
+}
+
+.top {
+  border-bottom: 1px solid transparent;
+}
+
+.top-1 {
+  top: 0;
+}
+
+.top-2 {
+  top: var(--size);
+}
+
+.bottom {
+  border-top: 1px solid transparent;
+}
+
+.bottom-1 {
+  bottom: 0;
+}
+
+.bottom-2 {
+  bottom: var(--size);
+}
+
+.stuck {
+  background-color: lightgreen;
+  border-color: gray;
+}
